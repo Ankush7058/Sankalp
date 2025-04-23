@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavali Luxury Project Showcase</title>
+  
+  <!-- CSS Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary-color: #b8860b;
+      --secondary-color: #101820;
+      --accent-color: #daa520;
+      --light-color: #f8f5e6;
+      --dark-color: #1c1c1c;
+      --transition: all 0.4s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark-color);
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+    
+  
+    /* Hero Section */
+    .hero-section {
+      height: 100vh;
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: -1;
+    }
+    
+    .hero-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 50px;
+    }
+    
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      opacity: 0;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+      opacity: 0;
+    }
+    
+    .hero-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      border: 2px solid var(--accent-color);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .hero-btn:hover {
+      background-color: transparent;
+      color: var(--accent-color);
+    }
+    
+    /* About Section */
+    .section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .section-dark {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .about-img {
+      border-radius: 8px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: var(--transition);
+    }
+    
+    .about-img:hover {
+      transform: perspective(1000px) rotateY(0);
+    }
+    
+    /* Features Section */
+    .feature-box {
+      padding: 30px;
+      border-radius: 10px;
+      transition: var(--transition);
+      background: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    .feature-box:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+      transition: var(--transition);
+      z-index: -1;
+      opacity: 0;
+    }
+    
+    .feature-box:hover:before {
+      height: 100%;
+      opacity: 1;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px);
+      color: white;
+    }
+    
+    .feature-box:hover .feature-icon {
+      background-color: white;
+      color: var(--accent-color);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(218, 165, 32, 0.1);
+      color: var(--accent-color);
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      padding: 100px 0;
+      background-color: var(--light-color);
+    }
+    
+    .swiper-container {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .swiper-slide:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+      color: white;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .swiper-slide:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    /* Specifications Section */
+    .spec-box {
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 10px;
+      transition: var(--transition);
+      margin-bottom: 30px;
+    }
+    
+    .spec-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
+    }
+    
+    .spec-title {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      display: flex;
+      align-items: center;
+    }
+    
+    .spec-icon {
+      color: var(--accent-color);
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+    
+    .spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .spec-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+    }
+    
+    .spec-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .spec-list li:before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--accent-color);
+      margin-right: 10px;
+    }
+    
+    /* Location Section */
+    .location-section {
+      position: relative;
+      padding: 100px 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/api/placeholder/1200/600') no-repeat center center;
+      background-size: cover;
+      color: white;
+    }
+    
+    .map-container {
+      height: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+    
+    /* Amenities Section */
+    .amenity-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 8px;
+      transition: var(--transition);
+      background-color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .amenity-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .amenity-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(218, 165, 32, 0.1);
+      color: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .amenity-text {
+      font-weight: 500;
+    }
+    
+    /* Call to Action */
+    .cta-section {
+      padding: 100px 0;
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23daa520' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.1;
+    }
+    
+    .cta-title {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+    }
+    
+    .cta-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      border: 2px solid var(--accent-color);
+      margin: 0 10px 10px;
+    }
+    
+    .cta-btn:hover {
+      background-color: transparent;
+      color: var(--accent-color);
+    }
+    
+    .cta-btn.outline {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+    }
+    
+    .cta-btn.outline:hover {
+      background-color: white;
+      color: var(--accent-color);
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      padding: 80px 0 0;
+      color: #bbb;
+    }
+    
+    .footer-heading {
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-heading:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      transition: var(--transition);
+      display: block;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-color);
+      transform: translateX(5px);
+    }
+    
+    .contact-info {
+      margin-bottom: 30px;
+    }
+    
+    .contact-info i {
+      color: var(--accent-color);
+      margin-right: 10px;
+      width: 20px;
+    }
+    
+    .social-links {
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+    
+    .copyright {
+      font-size: 0.9rem;
+    }
+    
+    /* Utils */
+    .text-gold {
+      color: var(--accent-color);
+    }
+    
+    .bg-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23daa520' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    /* Golden Line Divider */
+    .divider {
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+      margin: 50px 0;
+      width: 100%;
+    }
+    
+    /* Gold Shimmer Animation */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    
+    .shimmer-text {
+      background: linear-gradient(90deg, var(--primary-color), #fff8e7, var(--primary-color));
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s infinite linear;
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .floating {
+      animation: float 5s ease-in-out infinite;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 991px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      .about-img {
+        margin-bottom: 30px;
+      }
+      .cta-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      .section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .cta-title {
+        font-size: 2rem;
+      }
+    }
+    
+    /* Cursor Effect */
+    .custom-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--accent-color);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s;
+      display: none;
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: pulse 2s infinite;
+    }
+    
+    .scroll-indicator i {
+      font-size: 2rem;
+      color: white;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  
+ <!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
+  <div class="container px-4">
+    <a class="navbar-brand" href="#">
+      <img src="logo (1).webp" alt="Sankalp Logo">
+    </a>
+
+    <!-- Mobile Toggler -->
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="fas fa-bars fs-3"></i>
+    </button>
+
+    <!-- Navbar Menu -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav text-center text-lg-start">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+        <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <video class="hero-video" autoplay muted loop>
+      <source src="videoplayback.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+   
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+          <img src="bm1.jpg" alt="About Bhavali" class="img-fluid about-img">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <h2 class="section-title">About Bhavali</h2>
+          <p>Welcome to the epitome of luxury living. Bhavali Residences offers an exclusive collection of premium villas and plots nestled in the serene surroundings of nature, while providing all modern amenities for a comfortable lifestyle.</p>
+          <p>Our project combines architectural excellence with natural beauty to create spaces that transcend ordinary living. Every detail has been meticulously crafted to ensure that residents experience the perfect blend of luxury, comfort, and tranquility.</p>
+          <p>With sprawling landscapes, breathtaking views, and world-class amenities, Bhavali Residences is not just a home, but a statement of distinction and refined taste.</p>
+          <div class="row mt-4">
+            <div class="col-6">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle text-gold me-2"></i>
+                <span>Premium Location</span>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle text-gold me-2"></i>
+                <span>Luxury Amenities</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle text-gold me-2"></i>
+                <span>Exclusive Design</span>
+              </div>
+              <div class="d-flex align-items-center mb-3">
+                <i class="fas fa-check-circle text-gold me-2"></i>
+                <span>Investment Value</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Counter Section -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 col-6 mb-4 mb-md-0" data-aos="zoom-in" data-aos-duration="800">
+          <div class="counter-item">
+            <h2><span class="counter" data-count="120">0</span>+</h2>
+            <p>Acres of Land</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4 mb-md-0" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+          <div class="counter-item">
+            <h2><span class="counter" data-count="200">0</span>+</h2>
+            <p>Luxury Villas</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+          <div class="counter-item">
+            <h2><span class="counter" data-count="50">0</span>+</h2>
+            <p>Amenities</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
+          <div class="counter-item">
+            <h2><span class="counter" data-count="500">0</span>+</h2>
+            <p>Happy Families</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section bg-pattern">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="section-title">Exclusive Features</h2>
+        <p>Discover what makes Bhavali the most coveted address</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3 class="feature-title">Prime Location</h3>
+            <p>Strategically located with excellent connectivity to major highways and city centers while maintaining a peaceful environment.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h3 class="feature-title">Natural Beauty</h3>
+            <p>Surrounded by lush greenery and scenic landscapes that provide a serene and rejuvenating living experience.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="feature-title">Gated Community</h3>
+            <p>Round-the-clock security with advanced surveillance systems ensures complete safety and peace of mind.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="feature-title">Wellness Facilities</h3>
+            <p>State-of-the-art fitness center, spa, and yoga deck to rejuvenate your mind, body, and soul.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-swimming-pool"></i>
+            </div>
+            <h3 class="feature-title">Infinity Pool</h3>
+            <p>Luxurious infinity edge swimming pool with panoramic views and adjacent sunbathing deck.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="feature-title">Eco-Friendly</h3>
+            <p>Sustainable design with solar power integration, rainwater harvesting, and energy-efficient systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="section-title">Our Gallery</h2>
+        <p>Glimpses of luxury that await you at Bhavali</p>
+      </div>
+      <div class="swiper-container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="b1.jpg" alt="Gallery Image 1">
+            <div class="gallery-overlay">
+              <h4>Luxurious Villa Exterior</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="b2.jpg" alt="Gallery Image 2">
+            <div class="gallery-overlay">
+              <h4>Modern Living Room</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="b3.jpg" alt="Gallery Image 3">
+            <div class="gallery-overlay">
+              <h4>Swimming Pool Area</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="b4.jpg" alt="Gallery Image 4">
+            <div class="gallery-overlay">
+              <h4>Landscaped Gardens</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="b5.jpg" alt="Gallery Image 5">
+            <div class="gallery-overlay">
+              <h4>Master Bedroom</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <img src="b6.jpg" alt="Gallery Image 6">
+            <div class="gallery-overlay">
+              <h4>Clubhouse</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications Section -->
+  <section id="specifications" class="section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="section-title">Specifications</h2>
+        <p>Crafted with attention to detail and finest materials</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-home spec-icon"></i> Structure</h3>
+            <ul class="spec-list">
+              <li>RCC framed structure</li>
+              <li>Anti-termite treatment</li>
+              <li>Earthquake resistant design</li>
+              <li>Premium quality cement</li>
+              <li>6" thick external walls</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-door-open spec-icon"></i> Doors & Windows</h3>
+            <ul class="spec-list">
+              <li>Premium hardwood door frames</li>
+              <li>Imported hardware fittings</li>
+              <li>UPVC/aluminum windows</li>
+              <li>Double glazed acoustic windows</li>
+              <li>Automatic security doors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-paint-roller spec-icon"></i> Flooring & Walls</h3>
+            <ul class="spec-list">
+              <li>Italian marble in living areas</li>
+              <li>Engineered wooden flooring in bedrooms</li>
+              <li>Anti-skid tiles in bathrooms</li>
+              <li>Weather-resistant exterior paint</li>
+              <li>Acoustic treatment for walls</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-shower spec-icon"></i> Bathrooms</h3>
+            <ul class="spec-list">
+              <li>Imported sanitary fixtures</li>
+              <li>Designer faucets and fittings</li>
+              <li>Glass shower enclosures</li>
+              <li>Hot and cold water system</li>
+              <li>Rain shower in master bathroom</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-utensils spec-icon"></i> Kitchen</h3>
+            <ul class="spec-list">
+              <li>Modular kitchen with premium finishes</li>
+              <li>Granite/quartz countertop</li>
+              <li>Stainless steel sink with designer faucet</li>
+              <li>Provision for appliances</li>
+              <li>Chimney and hob</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+          <div class="spec-box">
+            <h3 class="spec-title"><i class="fas fa-plug spec-icon"></i> Electrical</h3>
+            <ul class="spec-list">
+              <li>Concealed copper wiring</li>
+              <li>Modular switches</li>
+              <li>Adequate light and power points</li>
+              <li>Provision for air conditioners</li>
+              <li>100% power backup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location" class="location-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h2 class="section-title">Strategic Location</h2>
+          <p>Bhavali Residences is strategically located to offer the perfect balance between connectivity and tranquility.</p>
+          <div class="mt-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-car text-gold me-3"></i>
+              <span>30 minutes from City Center</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-plane text-gold me-3"></i>
+              <span>45 minutes from International Airport</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-shopping-cart text-gold me-3"></i>
+              <span>15 minutes from Shopping Malls</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-hospital text-gold me-3"></i>
+              <span>10 minutes from Major Hospitals</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-graduation-cap text-gold me-3"></i>
+              <span>Close proximity to Premium Schools</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i class="fas fa-map-marked-alt fa-3x mb-3"></i>
+              <h4>Interactive Map</h4>
+              <p>Map visualization would appear here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Section -->
+  <section id="amenities" class="section bg-pattern">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+        <h2 class="section-title">Luxurious Amenities</h2>
+        <p>Everything you need for a royal lifestyle</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-swimming-pool"></i>
+            </div>
+            <div class="amenity-text">Infinity Pool</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-dumbbell"></i>
+            </div>
+            <div class="amenity-text">Fitness Center</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-spa"></i>
+            </div>
+            <div class="amenity-text">Spa & Sauna</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-table-tennis"></i>
+            </div>
+            <div class="amenity-text">Indoor Games</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-basketball-ball"></i>
+            </div>
+            <div class="amenity-text">Sports Courts</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="amenity-text">Fine Dining</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="amenity-text">Clubhouse</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="amenity-item">
+            <div class="amenity-icon">
+              <i class="fas fa-child"></i>
+            </div>
+            <div class="amenity-text">Kids Play Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="cta-pattern"></div>
+    <div class="container">
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <h2 class="cta-title">Experience Luxury Living</h2>
+        <p class="cta-subtitle">Schedule a site visit today to experience the opulence of Bhavali Residences firsthand. Our team will guide you through the property and help you find your dream home.</p>
+        <div class="mt-4">
+          <a href="#contact" class="cta-btn">BOOK SITE VISIT</a>
+          <a href="#" class="cta-btn outline">DOWNLOAD BROCHURE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <h2 class="section-title">Get in Touch</h2>
+          <p>Reach out to us for more information about Bhavali Residences</p>
+          <div class="contact-info mt-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-map-marker-alt text-gold me-3 fa-lg"></i>
+              <span>Office No 7–8, 1st Floor, Shreeji The Status,<br>Opposite City Center Mall, Forest Colony,<br>Parijat Nagar, Nasik, Maharashtra 422007</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-phone-alt text-gold me-3 fa-lg"></i>
+              <span>+91 8007 751 751</span>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-envelope text-gold me-3 fa-lg"></i>
+              <span>enquiry@sankalplandmark@gmail.com</span>
+            </div>
+            <div class="mt-4">
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <form class="contact-form p-4 bg-white shadow-lg rounded">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name*" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email*" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" placeholder="Phone Number*" required>
+            </div>
+            <div class="mb-3">
+              <select class="form-select">
+                <option selected>I'm interested in...</option>
+                <option>Villa</option>
+                <option>Plot</option>
+                <option>Apartment</option>
+                <option>Investment Options</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn bg-gradient w-100" style="background: var(--accent-color); color: white;">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo">
+            
+            <span>Sankalp Landmark</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <p>Office No 7–8, 1st Floor,<br>
+            Shreeji The Status, Opposite City Center Mall,<br>
+            Forest Colony, Parijat Nagar,<br>
+            Nasik, Maharashtra 422007</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <p><strong>Call:</strong> +91 8007 751 751</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <p><strong>Email:</strong> enquiry@sankalplandmark@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Our Verticals</h4>
+          <ul>
+            <li><a href="#">Agriculture Land</a></li>
+            <li><a href="#">NA Plots</a></li>
+            <li><a href="#">Investment Plots</a></li>
+            <li><a href="#">Resort Plots</a></li>
+            <li><a href="#">Passive Income Homes</a></li>
+            <li><a href="#">Villas & Studio Apartments</a></li>
+            <li><a href="#">Second Homes</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to our newsletter for exclusive property updates and investment opportunities.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder=" Email ">
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="awards-section">
+        <div class="awards-title"><i class="fas fa-award"></i> Our Recognitions</div>
+        <div class="awards-icons">
+          <div class="award-icon"><i class="fas fa-medal"></i></div>
+          <div class="award-icon"><i class="fas fa-trophy"></i></div>
+          <div class="award-icon"><i class="fas fa-certificate"></i></div>
+          <div class="award-icon"><i class="fas fa-star"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        <a href="#" class="footer-link">Privacy Policy</a> |
+        <a href="#" class="footer-link">Terms & Conditions</a> |
+        <a href="#" class="footer-link">Disclaimer</a>
+        &nbsp; | © Sankalp Landmark 2024<br>
+        <span>Design & Developed by <a href="#" class="footer-dev">A2Z IT HUB</a></span>
+      </p>
+    </div>
+  </footer>
+  
+  <script>
+    // Intersection Observer to trigger animations when footer is in view
+    document.addEventListener('DOMContentLoaded', function() {
+      const footerColumns = document.querySelectorAll('.footer-col');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `fadeIn 1s ease-in-out forwards ${entry.target.dataset.delay}`;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      footerColumns.forEach((column, index) => {
+        column.style.opacity = '0';
+        column.style.transform = 'translateY(20px)';
+        column.dataset.delay = `${index * 0.2}s`;
+        observer.observe(column);
+      });
+      
+      // Shimmer effect for social icons
+      const socialIcons = document.querySelectorAll('.social-icons a');
+      
+      setInterval(() => {
+        socialIcons.forEach((icon, index) => {
+          setTimeout(() => {
+            icon.classList.add('shimmer');
+            setTimeout(() => {
+              icon.classList.remove('shimmer');
+            }, 1000);
+          }, index * 200);
+        });
+      }, 5000);
+    });
+  </script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      duration: 1000,
+      easing: 'ease-in-out'
+    });
+    
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // GSAP Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hero section animation
+      gsap.from('.hero-title', {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5
+      });
+      
+      gsap.from('.hero-subtitle', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 0.8
+      });
+      
+      gsap.to('.hero-btn', {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 1.1
+      });
+      
+      // Counter animation
+      const counters = document.querySelectorAll('.counter');
+      
+      function startCount(el) {
+        const target = parseInt(el.getAttribute('data-count'));
+        const count = +el.innerText;
+        const increment = target / 50;
+        
+        if(count < target) {
+          el.innerText = Math.ceil(count + increment);
+          setTimeout(() => startCount(el), 40);
+        } else {
+          el.innerText = target;
+        }
+      }
+      
+      // Trigger counter animation when in view
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach(counter => startCount(counter));
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      
+      document.querySelectorAll('.counter-item').forEach(item => {
+        counterObserver.observe(item);
+      });
+      
+      // Custom cursor effect
+      const cursor = document.querySelector('.custom-cursor');
+      
+      if (window.innerWidth > 991) {
+        cursor.style.display = 'block';
+        
+        document.addEventListener('mousemove', e => {
+          gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1
+          });
+        });
+        
+        document.querySelectorAll('a, button').forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.borderColor = 'var(--accent-color)';
+          });
+          
+          link.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.borderColor = 'var(--accent-color)';
+          });
+        });
+      }
+      
+      // Parallax Effect
+      gsap.registerPlugin(ScrollTrigger);
+      
+      gsap.utils.toArray('.about-img, .cta-title, .section-title').forEach(element => {
+        gsap.to(element, {
+          y: -30,
+          scrollTrigger: {
+            trigger: element,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      });
+      
+      // Scroll indicator animation
+      gsap.to('.scroll-indicator', {
+        y: 15,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sankalp Navbar with Video</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+   <!-- Existing meta tags and links -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <style>
+        /* Add to existing CSS */
+.contact-hero {
+    animation: heroZoom 20s infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.contact-info-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #ffc107;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.contact-form-section .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    transition: all 0.3s ease;
+    padding-left: 40px;
+}
+
+.contact-form-section .form-control:focus {
+    border-bottom-color: #ffc107;
+    box-shadow: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.form-group {
+    position: relative;
+}
+
+.btn-submit {
+    background: linear-gradient(45deg, #ffc107, #ff6b00);
+    border: none;
+    padding: 12px 35px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,107,0,0.3);
+}
+
+.btn-submit::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.btn-submit:hover::after {
+    left: 120%;
+}
+
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 80px 20px;
+    }
+    
+    iframe {
+        height: 300px;
+    }
+    
+    .contact-form-section .form-control {
+        padding-left: 35px;
+    }
+}
+
+/* Floating animation for contact icons */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.contact-info-card i {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient text for headings */
+.gradient-text {
+    background: linear-gradient(45deg, #ffc107, #ff6b00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.rich-iframe-wrapper {
+  background: linear-gradient(135deg, #fffbe6, #fff0c2);
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid #d4af37; /* royal gold */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: floatRoyal 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+.rich-iframe-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.rich-iframe-wrapper iframe {
+  border-radius: 15px;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes floatRoyal {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#">
+        <img src="logo (1).webp" alt="Sankalp Logo">
+      </a>
+  
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars fs-3"></i>
+      </button>
+  
+      <!-- Navbar Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center text-lg-start">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact-hero mt-5 mb-5" style="background: url('https://www.sankalplandmark.com/assets/img/contact-us.jpg') center/cover no-repeat; padding: 120px 20px; position: relative;">
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1);"></div>
+    <div class="container position-relative text-white text-center">
+      <img src="logo (1).webp" alt="Sankalp Logo" width="150" class="mb-3">
+      <h1 class="display-5 fw-bold animate__animated animate__fadeInDown">CONNECT WITH US</h1>
+      <p class="lead animate__animated animate__fadeInUp">We'd love to hear from you. Reach out to us for any inquiries or support.</p>
+    </div>
+  </section>
+
+<!-- Contact Info Section SECOND -->
+<section class="contact-info-section py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+            <div class="rich-iframe-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59990.49339496582!2d73.6850256486328!3d19.991474700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42412f26fa5414bf%3A0xdb52cb8532dead1!2sSankalp%20Landmark!5e0!3m2!1sen!2sin!4v1745303631899!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        </div>
+         <!-- Contact Form Section FIRST -->
+<section class="contact-form-section py-5 col-md-6 mb-4 mb-md-0" style="background: linear-gradient(145deg, #fff4eb, #fef6f2);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="">
+                <div class="bg-white p-5 rounded-3 shadow-lg" data-aos="zoom-in">
+                    <h3 class="text-center text-uppercase mb-4 gradient-text">Send Us a Message</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" class="form-control" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" class="form-control" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="text" class="form-control" placeholder="Your Phone">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group">
+                                    <i class="fas fa-tag input-icon"></i>
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="form-group">
+                                    <i class="fas fa-comment input-icon"></i>
+                                    <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-submit text-white fw-bold">
+                                Send Message <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+       
+      </div>
+    </div>
+</section>
+
+  
+
+  
+  <div class="divider"></div>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="brand-logo">
+            <i class="fas fa-landmark logo-icon"></i>
+            <span>Sankalp Landmark</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <p>Office No 7–8, 1st Floor,<br>
+            Shreeji The Status, Opposite City Center Mall,<br>
+            Forest Colony, Parijat Nagar,<br>
+            Nasik, Maharashtra 422007</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <p><strong>Call:</strong> +91 8007 751 751</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <p><strong>Email:</strong> enquiry@sankalplandmark@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Our Verticals</h4>
+          <ul>
+            <li><a href="#">Agriculture Land</a></li>
+            <li><a href="#">NA Plots</a></li>
+            <li><a href="#">Investment Plots</a></li>
+            <li><a href="#">Resort Plots</a></li>
+            <li><a href="#">Passive Income Homes</a></li>
+            <li><a href="#">Villas & Studio Apartments</a></li>
+            <li><a href="#">Second Homes</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Stay Connected</h4>
+          <p>Subscribe to our newsletter for exclusive property updates and investment opportunities.</p>
+          <div class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder=" Email ">
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="awards-section">
+        <div class="awards-title"><i class="fas fa-award"></i> Our Recognitions</div>
+        <div class="awards-icons">
+          <div class="award-icon"><i class="fas fa-medal"></i></div>
+          <div class="award-icon"><i class="fas fa-trophy"></i></div>
+          <div class="award-icon"><i class="fas fa-certificate"></i></div>
+          <div class="award-icon"><i class="fas fa-star"></i></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        <a href="#" class="footer-link">Privacy Policy</a> |
+        <a href="#" class="footer-link">Terms & Conditions</a> |
+        <a href="#" class="footer-link">Disclaimer</a>
+        &nbsp; | © Sankalp Landmark 2024<br>
+        <span>Design & Developed by <a href="#" class="footer-dev">A2Z IT HUB</a></span>
+      </p>
+    </div>
+  </footer>
+  <!-- Add this script for additional interactions -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Form input interactions
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.querySelector('.input-icon').style.color = '#ffc107';
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.querySelector('.input-icon').style.color = '#666';
+            });
+        });
+    
+        // Intersection Observer for staggered animations
+        const observers = [];
+        document.querySelectorAll('[data-aos]').forEach((el, index) => {
+            observers.push(new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 }));
+            
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `opacity 0.6s ease ${index*0.1}s, transform 0.6s ease ${index*0.1}s`;
+            observers[index].observe(el);
+        });
+    });
+    </script>
+  <script>
+    // Intersection Observer to trigger animations when footer is in view
+    document.addEventListener('DOMContentLoaded', function() {
+      const footerColumns = document.querySelectorAll('.footer-col');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `fadeIn 1s ease-in-out forwards ${entry.target.dataset.delay}`;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      footerColumns.forEach((column, index) => {
+        column.style.opacity = '0';
+        column.style.transform = 'translateY(20px)';
+        column.dataset.delay = `${index * 0.2}s`;
+        observer.observe(column);
+      });
+      
+      // Shimmer effect for social icons
+      const socialIcons = document.querySelectorAll('.social-icons a');
+      
+      setInterval(() => {
+        socialIcons.forEach((icon, index) => {
+          setTimeout(() => {
+            icon.classList.add('shimmer');
+            setTimeout(() => {
+              icon.classList.remove('shimmer');
+            }, 1000);
+          }, index * 200);
+        });
+      }, 5000);
+    });
+  </script>
+  
+  
+  
+  <script>
+    // Add 'glass' class after delay (e.g., 2 seconds)
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelector('.navbar').classList.add('glass');
+      }, 2000); // Adjust the delay as needed
+    });
+  
+    // OR add glass on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('glass');
+      } else {
+        navbar.classList.remove('glass');
+      }
+    });
+  </script>
+  
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+ 
+  
+  <!-- Add before closing body -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      offset: 100
+    });
+  </script>
+  
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- New Scripts -->
+  
+  </body>
+  </html>
+  

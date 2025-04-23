@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sankalp Navbar with Video</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+   <!-- Existing meta tags and links -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+<style>
+    /* Showcase Section Styles */
+    .showcase-section {
+      padding: 80px 0;
+      
+      background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.85) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .showcase-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/api/placeholder/1920/1080') center/cover no-repeat;
+      opacity: 0.08;
+      z-index: 0;
+    }
+    
+    .showcase-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      z-index: 1;
+    }
+    
+    .showcase-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .showcase-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: #333;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .showcase-title::after {
+      content: '';
+      position: absolute;
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      bottom: -10px;
+      left: 15%;
+    }
+    
+    .showcase-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 40px;
+      background: linear-gradient(180deg, #e67e22, #f39c12);
+      left: 0;
+      top: 30px;
+      border-radius: 0 3px 3px 0;
+    }
+    
+    .feature-icon {
+      color: #e67e22;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .feature-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .feature-description {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .brochure-section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin: 80px 0;
+    }
+    
+    .brochure-content {
+      flex: 1;
+    }
+    
+    .brochure-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .brochure-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    
+    .brochure-cta {
+      display: inline-block;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .brochure-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+    }
+    
+    .brochure-image {
+      flex: 1;
+      position: relative;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .brochure-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .brochure-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .showcase-gallery {
+      margin-top: 80px;
+    }
+    
+    .gallery-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .gallery-title::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 250px);
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    
+    .gallery-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    
+    .gallery-caption {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .key-features {
+      padding: 60px 0;
+      background: linear-gradient(135deg, rgba(230, 126, 34, 0.05) 0%, rgba(243, 156, 18, 0.1) 100%);
+      border-radius: 20px;
+      margin: 80px 0;
+    }
+    
+    .key-features-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 50px;
+    }
+    
+    .key-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .key-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .key-feature-icon {
+      background: linear-gradient(135deg, #e67e22, #f39c12);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .key-feature-content h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .key-feature-content p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .investment-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px;
+      margin: 60px 0;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .investment-content {
+      flex: 1;
+    }
+    
+    .investment-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .investment-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    
+    .investment-highlights {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .investment-highlight {
+      background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(243, 156, 18, 0.2) 100%);
+      border-radius: 10px;
+      padding: 15px;
+      flex: 1;
+      text-align: center;
+    }
+    
+    .highlight-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #e67e22;
+      margin-bottom: 5px;
+    }
+    
+    .highlight-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .investment-image {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .investment-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .brochure-section {
+        flex-direction: column;
+      }
+      
+      .investment-section {
+        flex-direction: column;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .key-features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+    
+    /* Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .slide-in-left {
+      transform: translateX(-100px);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    
+    .slide-in-left.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    .slide-in-right {
+      transform: translateX(100px);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    
+    .slide-in-right.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    
+    .zoom-in {
+      transform: scale(0.8);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    
+    .zoom-in.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* Hero Section Styles */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, #e67e22, #f39c12);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.5);
+}
+
+/* Responsive Hero Text */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+}
+
+  </style>
+</head>
+<body>
+</head>
+
+<body>
+
+<!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#">
+        <img src="logo (1).webp" alt="Sankalp Logo">
+      </a>
+  
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars fs-3"></i>
+      </button>
+  
+      <!-- Navbar Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center text-lg-start">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-image-container">
+      <img src="sm1.jpg" alt="Hero Image of Sunscape" class="hero-image">
+      <div class="hero-overlay">
+        <div class="hero-text">
+          <h1>Welcome to Sunscape</h1>
+          <p>Discover Tranquility, Invest in the Future</p>
+          <a href="#brochure" class="hero-cta">Explore Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section class="showcase-section">
+  <div class="showcase-container">
+    <div class="showcase-header" data-aos="fade-up">
+      <h2 class="showcase-title">Introducing Sunscape</h2>
+      <p class="showcase-subtitle">Where Nature's Beauty Meets Luxurious Living</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <h3 class="feature-title">Seamless Connectivity</h3>
+        <p class="feature-description">Imagine a place where you're surrounded by nature's tranquility, yet the pulse of the city is just a drive away. That's the seamless connectivity Sunscape offers.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">
+          <i class="fas fa-mountain"></i>
+        </div>
+        <h3 class="feature-title">Prime Picturesque Location</h3>
+        <p class="feature-description">Imagine waking up to the sight of lush greenery and rolling hills bathed in the morning sun. That's the picturesque reality of life at Sunscape.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="feature-title">Priceless Peaceful Living</h3>
+        <p class="feature-description">Picture yourself sipping your morning coffee, the air filled with birdsong instead of honking horns. That's the peaceful living experience at Sunscape.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-icon">
+          <i class="fas fa-home"></i>
+        </div>
+        <h3 class="feature-title">Flexible Second Homes</h3>
+        <p class="feature-description">Dream of a cozy cottage or a luxurious villa? At Sunscape, you're the architect of your dream second home. Build at your own pace, in your own style.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="feature-title">Unbelievable Growth Potential</h3>
+        <p class="feature-description">Think of an investment that grows as organically as the trees around your plot. With a projected growth potential of 12-15% per annum, Sunscape offers a lucrative opportunity.</p>
+      </div>
+      
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3 class="feature-title">Best Opportunity For Investors</h3>
+        <p class="feature-description">Sunscape is perfect for investors from nearby cities looking for valuable investment plots or second homes. With plots starting from 2000 sq.ft. and prices from 25 lacs onwards.</p>
+      </div>
+    </div>
+    
+    <div class="brochure-section">
+      <div class="brochure-content" data-aos="fade-right">
+        <h3 class="brochure-title">Experience Nature's Embrace</h3>
+        <p class="brochure-text">Sunscape is equipped with essential infrastructure including electricity connection, water connection, well-constructed WBM roads, fencing, and plot demarcation. These features ensure a hassle-free and comfortable living experience.</p>
+        <p class="brochure-text">In the thriving locality of Igatpuri, land is a precious commodity. The limited availability of plots makes Sunscape an exclusive investment opportunity that is not only timely but also poised for substantial appreciation.</p>
+        <a href="#" class="brochure-cta">Download Brochure</a>
+      </div>
+      <div class="brochure-image" data-aos="fade-left">
+        <img src="sm1.jpg" alt="Sunscape Aerial View">
+      </div>
+    </div>
+    
+    <div class="key-features" data-aos="fade-up">
+      <h3 class="key-features-title">What Makes Sunscape Special</h3>
+      <div class="key-features-grid">
+        <div class="key-feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="key-feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="key-feature-content">
+            <h4>Natural Beauty</h4>
+            <p>Surrounded by lush greenery and rolling hills that create a serene, picturesque environment.</p>
+          </div>
+        </div>
+        
+        <div class="key-feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="key-feature-icon">
+            <i class="fas fa-ruler-combined"></i>
+          </div>
+          <div class="key-feature-content">
+            <h4>Customizable Plots</h4>
+            <p>East-west facing plots ranging from 8 to 12 meters with internal roads to optimize sunlight and ventilation.</p>
+          </div>
+        </div>
+        
+        <div class="key-feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="key-feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="key-feature-content">
+            <h4>Complete Infrastructure</h4>
+            <p>Electricity connection, water connection, well-constructed roads, and plot demarcation included.</p>
+          </div>
+        </div>
+        
+        <div class="key-feature-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="key-feature-icon">
+            <i class="fas fa-location-arrow"></i>
+          </div>
+          <div class="key-feature-content">
+            <h4>Strategic Location</h4>
+            <p>Nestled in the thriving locality of Igatpuri, offering both tranquility and convenience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="investment-section">
+      <div class="investment-content" data-aos="fade-right">
+        <h3 class="investment-title">A Smart Investment for Your Future</h3>
+        <p class="investment-text">The limited availability of plots in Igatpuri makes Sunscape a timely investment crucial for substantial appreciation. With plots starting from 2000 sq.ft. and prices from 25 lacs onwards, Sunscape offers an exclusive opportunity for real estate investors.</p>
+        
+        <div class="investment-highlights">
+          <div class="investment-highlight">
+            <div class="highlight-number">12-15%</div>
+            <div class="highlight-text">Annual Growth Potential</div>
+          </div>
+          
+          <div class="investment-highlight">
+            <div class="highlight-number">2000+</div>
+            <div class="highlight-text">Sq.ft. Plot Sizes</div>
+          </div>
+          
+          <div class="investment-highlight">
+            <div class="highlight-number">25L+</div>
+            <div class="highlight-text">Starting Price</div>
+          </div>
+        </div>
+      </div>
+      <div class="investment-image" data-aos="fade-left">
+        <img src="sm2.jpg" alt="Sunscape Investment">
+      </div>
+    </div>
+    
+    <div class="showcase-gallery">
+      <h3 class="gallery-title" data-aos="fade-up">Glimpses of Sunscape</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item large" data-aos="zoom-in" data-aos-delay="100">
+          <img src="sm2.jpg" alt="Sunscape Panoramic View">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Panoramic Views of Nature</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          <img src="sm1.jpg" alt="Sunscape Plot Layout">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Plot Layout</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+          <img src="sm4.jpg" alt="Sunscape Infrastructure">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Infrastructure</div>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+          <img src="sm5.jpg" alt="Sunscape Interior Design">
+          <div class="gallery-overlay">
+            <div class="gallery-caption">Villa Concept</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-logo">
+          
+          <span>Sankalp Landmark</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <p>Office No 7–8, 1st Floor,<br>
+          Shreeji The Status, Opposite City Center Mall,<br>
+          Forest Colony, Parijat Nagar,<br>
+          Nasik, Maharashtra 422007</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <p><strong>Call:</strong> +91 8007 751 751</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p><strong>Email:</strong> enquiry@sankalplandmark@gmail.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Properties</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Our Verticals</h4>
+        <ul>
+          <li><a href="#">Agriculture Land</a></li>
+          <li><a href="#">NA Plots</a></li>
+          <li><a href="#">Investment Plots</a></li>
+          <li><a href="#">Resort Plots</a></li>
+          <li><a href="#">Passive Income Homes</a></li>
+          <li><a href="#">Villas & Studio Apartments</a></li>
+          <li><a href="#">Second Homes</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p>Subscribe to our newsletter for exclusive property updates and investment opportunities.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder=" Email ">
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="awards-section">
+      <div class="awards-title"><i class="fas fa-award"></i> Our Recognitions</div>
+      <div class="awards-icons">
+        <div class="award-icon"><i class="fas fa-medal"></i></div>
+        <div class="award-icon"><i class="fas fa-trophy"></i></div>
+        <div class="award-icon"><i class="fas fa-certificate"></i></div>
+        <div class="award-icon"><i class="fas fa-star"></i></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>
+      <a href="#" class="footer-link">Privacy Policy</a> |
+      <a href="#" class="footer-link">Terms & Conditions</a> |
+      <a href="#" class="footer-link">Disclaimer</a>
+      &nbsp; | © Sankalp Landmark 2024<br>
+      <span>Design & Developed by <a href="#" class="footer-dev">A2Z IT HUB</a></span>
+    </p>
+  </div>
+</footer>
+<script>
+    // Intersection Observer to trigger animations when footer is in view
+    document.addEventListener('DOMContentLoaded', function() {
+      const footerColumns = document.querySelectorAll('.footer-col');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `fadeIn 1s ease-in-out forwards ${entry.target.dataset.delay}`;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      footerColumns.forEach((column, index) => {
+        column.style.opacity = '0';
+        column.style.transform = 'translateY(20px)';
+        column.dataset.delay = `${index * 0.2}s`;
+        observer.observe(column);
+      });
+      
+      // Shimmer effect for social icons
+      const socialIcons = document.querySelectorAll('.social-icons a');
+      
+      setInterval(() => {
+        socialIcons.forEach((icon, index) => {
+          setTimeout(() => {
+            icon.classList.add('shimmer');
+            setTimeout(() => {
+              icon.classList.remove('shimmer');
+            }, 1000);
+          }, index * 200);
+        });
+      }, 5000);
+    });
+  </script>
+
+<script>
+  // Animate elements when they come into view
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if AOS is already loaded (from your main HTML file)
+    if (typeof AOS === 'undefined') {
+      // Load AOS if not already loaded
+      const aosScript = document.createElement('script');
+      aosScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js';
+      aosScript.onload = function() {
+        AOS.init({
+          duration: 800,
+          once: true,
+          easing: 'ease-in-out',
+          offset: 100
+        });
+      };
+      document.body.appendChild(aosScript);
+      
+      const aosCSS = document.createElement('link');
+      aosCSS.rel = 'stylesheet';
+      aosCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css';
+      document.head.appendChild(aosCSS);
+    } else {
+      // If AOS is already loaded, just refresh it for new elements
+      AOS.refresh();
+    }
+    
+    // Custom animations for elements with specific classes
+    function handleScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .zoom-in');
+      
+      animatedElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+        
+        if (isVisible) {
+          element.classList.add('active');
+        }
+      });
+    }
+    
+    // Initial check and event listener
+    handleScrollAnimations();
+    window.addEventListener('scroll', handleScrollAnimations);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sankalp Navbar with Video</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+   <!-- Existing meta tags and links -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<!-- Add these in head section -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+
+    <style>
+      .vertical-section {
+          padding: 80px 0;
+          overflow: hidden;
+      }
+  /* Add this for the main title */
+.verticals-main-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+    background: linear-gradient(45deg, #c5a47e, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleEntrance 1s ease-out;
+}
+
+.verticals-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #c5a47e;
+}
+
+@keyframes titleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+      .vertical-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          gap: 50px;
+          padding: 40px;
+      }
+  
+      .vertical-content {
+          flex: 1;
+          padding: 30px;
+          position: relative;
+      }
+  
+      .image-container {
+          flex: 1;
+          position: relative;
+          min-height: 400px;
+      }
+  
+      .main-image {
+          position: absolute;
+          width: 85%;
+          height: 85%;
+          object-fit: cover;
+          border-radius: 15px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+          transition: transform 0.3s ease;
+          z-index: 2;
+      }
+  
+      .overlay-image {
+          position: absolute;
+          width: 85%;
+          height: 85%;
+          right: 0;
+          bottom: 0;
+          object-fit: cover;
+          border-radius: 15px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+          transition: transform 0.3s ease;
+          z-index: 1;
+          border: 5px solid #ffffff;
+      }
+  
+      .vertical-title {
+          font-size: 2.5em;
+          color: #2c3e50;
+          margin-bottom: 20px;
+          font-family: 'Playfair Display', serif;
+      }
+  
+      .vertical-text {
+          font-size: 1.1em;
+          line-height: 1.8;
+          color: #555;
+          margin-bottom: 30px;
+          font-family: 'Lato', sans-serif;
+      }
+  
+      /* Alternate layout for even sections */
+      .vertical-section:nth-child(even) .vertical-container {
+          flex-direction: row-reverse;
+      }
+  
+      /* Hover effects */
+      .image-container:hover .main-image {
+          transform: translateY(-10px);
+      }
+  
+    /* Modified image hover effects */
+.image-container:hover .overlay-image {
+    transform: translate(-20px, -20px) scale(1.05);
+    z-index: 3;
+    transition-delay: 0.1s;
+}
+
+.image-container:hover .main-image {
+    transform: translate(10px, 10px);
+    z-index: 2;
+}
+
+/* Add transition delays */
+.main-image {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.overlay-image {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+}
+
+/* Add scroll animation for sections */
+[data-aos="vertical-anim"] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+[data-aos="vertical-anim"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+  
+      /* Decorative elements */
+      .vertical-content::before {
+          content: '';
+          position: absolute;
+          width: 60px;
+          height: 4px;
+          background: #c5a47e;
+          top: 0;
+          left: 0;
+      }
+  
+      @media (max-width: 768px) {
+          .vertical-container {
+              flex-direction: column;
+              padding: 20px;
+          }
+  
+          .vertical-section:nth-child(even) .vertical-container {
+              flex-direction: column;
+          }
+  
+          .image-container {
+              width: 100%;
+              min-height: 300px;
+          }
+  
+          .vertical-title {
+              font-size: 2em;
+          }
+          .verticals-main-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .image-container {
+        min-height: 300px;
+    }
+    
+    .overlay-image {
+        width: 75%;
+        height: 75%;
+    }
+      }
+      .hero-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 120px;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.verticals-scroll-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.vertical-link {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #c5a47e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.vertical-link:hover {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+  </style>
+  
+  <!-- Repeat for other verticals, alternating even/odd sections -->
+</head>
+
+<body>
+
+<!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#">
+        <img src="logo (1).webp" alt="Sankalp Logo">
+      </a>
+  
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars fs-3"></i>
+      </button>
+  
+      <!-- Navbar Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center text-lg-start">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Hero Section -->
+<section class="hero-section text-white d-flex align-items-center" style="background-image: url('https://sankalplandmark.com/assets/img/plots/01.jpg');">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">Welcome to Sankalp Landmark</h1>
+    <p class="lead">Discover diverse property investment opportunities</p>
+  </div>
+</section>
+
+  
+  <!-- Add this in your verticals page content -->
+  <section class="vertical-section mt-5">
+    <h1 class="verticals-main-title" data-aos="fade-down">Our Verticals</h1>
+    <!-- Vertical Links Scroll Navigation -->
+<div class="verticals-scroll-nav text-center mb-5">
+  <a href="#agriculture" class="vertical-link">Agriculture Land</a>
+  <a href="#na" class="vertical-link">NA Plots</a>
+  <a href="#investment" class="vertical-link">Investment Plots</a>
+  <a href="#resort" class="vertical-link">Resort Plots</a>
+  <a href="#passive" class="vertical-link">Passive Income Homes</a>
+  <a href="#villa" class="vertical-link">Villas & Studio Apartments</a>
+  <a href="#second" class="vertical-link">Second Homes</a>
+</div>
+
+    <div class="vertical-container" data-aos="vertical-anim">
+        <div class="image-container">
+            <img src="https://sankalplandmark.com/assets/img/agriculture-lands/02.jpg" class="main-image" alt="Vertical 1">
+            <img src="https://sankalplandmark.com/assets/img/agriculture-lands/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+        </div>
+        <div class="vertical-content">
+            <h2 class="vertical-title">Agriculture Lands</h2>
+            <p class="vertical-text">
+              If you’re bitten by the agricultural bug, we have the ideal answer for you. Nashik is famous for a wide range of crops like onion, grapes, maize, wheat and other cereals. You too can return to your roots and carry these agrarian activities by purchasing from our range of agricultural lands. As per the recent trends, the values of these lands experience a steady increase by 10-12% per annum.
+
+              So take a glimpse at the agricultural lands we have with us and invest in a prosperous tomorrow
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="vertical-section">
+  <div class="vertical-container" data-aos="vertical-anim">
+
+    <div class="image-container">
+      <img src="https://sankalplandmark.com/assets/img/plots/03.jpg" class="main-image" alt="Vertical 1">
+      <img src="https://sankalplandmark.com/assets/img/plots/02.jpg" class="overlay-image" alt="Vertical 1 Additional">
+  </div>
+    <div class="vertical-content">
+      <h2 class="vertical-title">NA Plots</h2>
+      <p class="vertical-text">
+        At Sankalp Landmark, we have accrued a diverse range of NA Plots (Non Agricultural Plots) in and around the city of Nashik. All of these plots are located in exquisite locations and are extremely ideal spaces for building your future homes, offices and businesses. They also provide a combination of privacy and security which is desirable from a customer perspective.
+
+        In terms of being a prudent investment option too, these plots yield a healthy 15% ROI per year. Seize this fabulous opportunity to purchase a NA Plot with us and feel rest assured about your investment.
+        
+        
+      </p>
+  </div>
+   
+     
+  </div>
+</section>
+  <!-- Add this in your verticals page content -->
+  <section class="vertical-section ">
+
+    <div class="vertical-container" data-aos="vertical-anim">
+        <div class="image-container">
+            <img src="https://sankalplandmark.com/assets/img/investment-plots/02.jpg" class="main-image" alt="Vertical 1">
+            <img src="https://sankalplandmark.com/assets/img/investment-plots/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+        </div>
+        <div class="vertical-content">
+            <h2 class="vertical-title">Investment Plots</h2>
+            <p class="vertical-text">
+              Land has long been revered for being an appreciating asset. And these days, investment plots are drawing a lot of interest from several people these days. Also known as speculative lands, these investment plots offer a high rate of interest in a comparatively shorter period of time.
+
+              They are a perfect choice for those who want to grow their wealth quickly and earn a neat profit. Glance, explore and invest in our range of premium investment plots.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="vertical-section">
+  <div class="vertical-container" data-aos="vertical-anim">
+
+    <div class="image-container">
+      <img src="https://sankalplandmark.com/assets/img/resort-plot/02.jpg" class="main-image" alt="Vertical 1">
+      <img src="https://sankalplandmark.com/assets/img/resort-plot/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+  </div>
+    <div class="vertical-content">
+      <h2 class="vertical-title">Resort Plots</h2>
+      <p class="vertical-text">
+        Staying in the city does come with its share of disadvantages. The rigours of the breakneck 21st century lifestyle can drain the energy out of anyone. We all need some time off to recharge our batteries.
+
+        To soothe the soul, revive the body and rejuvenate the mind, we have an assortment of exquisite resort plots for you. You can build the resort of your dreams here and provide a calm place for people to relax.
+        
+      </p>
+  </div>
+   
+     
+  </div>
+</section>
+  <!-- Add this in your verticals page content -->
+  <section class="vertical-section ">
+  
+    <div class="vertical-container" data-aos="vertical-anim">
+        <div class="image-container">
+            <img src="https://sankalplandmark.com/assets/img/passive-income-homes/02.jpg" class="main-image" alt="Vertical 1">
+            <img src="https://sankalplandmark.com/assets/img/passive-income-homes/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+        </div>
+        <div class="vertical-content">
+            <h2 class="vertical-title">Passive Income Homes</h2>
+            <p class="vertical-text">
+              Homes are a great investment option to earn a steady source of passive income and a lot of people are looking for spaces nestled in the countryside. If you want to do the same and take home a healthy rent, we provide a fabulous opportunity with great terms and conditions.
+
+              The demand for these homes is high currently making them a wise option. Take a look at our diverse range and earn significantly with your assets!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="vertical-section">
+  <div class="vertical-container" data-aos="vertical-anim">
+
+    <div class="image-container">
+      <img src="https://sankalplandmark.com/assets/img/Villas-and-studio-apartments/02.jpg" class="main-image" alt="Vertical 1">
+      <img src="https://sankalplandmark.com/assets/img/Villas-and-studio-apartments/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+  </div>
+    <div class="vertical-content">
+      <h2 class="vertical-title">Villas & Studio Apartments</h2>
+      <p class="vertical-text">
+        Staying in the city does come with its share of disadvantages. The rigours of the breakneck 21st century lifestyle can drain the energy out of anyone. We all need some time off to recharge our batteries.
+
+        To soothe the soul, revive the body and rejuvenate the mind, we have an assortment of exquisite Villas & Studio Apartments for you. You can build the resort of your dreams here and provide a calm place for people to relax.
+        
+        
+        
+      </p>
+  </div>
+   
+     
+  </div>
+</section>
+<!-- Add this in your verticals page content -->
+<section class="vertical-section ">
+
+  <div class="vertical-container" data-aos="vertical-anim">
+      <div class="image-container">
+          <img src="https://sankalplandmark.com/assets/img/second-homes/02.jpg" class="main-image" alt="Vertical 1">
+          <img src="https://sankalplandmark.com/assets/img/second-homes/03.jpg" class="overlay-image" alt="Vertical 1 Additional">
+      </div>
+      <div class="vertical-content">
+          <h2 class="vertical-title">Second Homes
+          </h2>
+          <p class="vertical-text">
+            We all need a little bit of adventure in our lives. If you’re looking for the same, it’s time for you to get out of your homes, disconnect from the world and choose a lifestyle of peace unparalleled. After all, nobody likes to be caught in the hustle and bustle of city life.
+
+            To help you unwind, we have the perfect spaces for you to own a second home at a scenic location. Over here, you can relax freely on weekends with your family and friends.
+          </p>
+      </div>
+  </div>
+</section>
+<div class="divider"></div>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-logo">
+          
+          <span>Sankalp Landmark</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <p>Office No 7–8, 1st Floor,<br>
+          Shreeji The Status, Opposite City Center Mall,<br>
+          Forest Colony, Parijat Nagar,<br>
+          Nasik, Maharashtra 422007</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <p><strong>Call:</strong> +91 8007 751 751</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p><strong>Email:</strong> enquiry@sankalplandmark@gmail.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Properties</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Our Verticals</h4>
+        <ul>
+          <li><a href="#">Agriculture Land</a></li>
+          <li><a href="#">NA Plots</a></li>
+          <li><a href="#">Investment Plots</a></li>
+          <li><a href="#">Resort Plots</a></li>
+          <li><a href="#">Passive Income Homes</a></li>
+          <li><a href="#">Villas & Studio Apartments</a></li>
+          <li><a href="#">Second Homes</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p>Subscribe to our newsletter for exclusive property updates and investment opportunities.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder=" Email ">
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="awards-section">
+      <div class="awards-title"><i class="fas fa-award"></i> Our Recognitions</div>
+      <div class="awards-icons">
+        <div class="award-icon"><i class="fas fa-medal"></i></div>
+        <div class="award-icon"><i class="fas fa-trophy"></i></div>
+        <div class="award-icon"><i class="fas fa-certificate"></i></div>
+        <div class="award-icon"><i class="fas fa-star"></i></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>
+      <a href="#" class="footer-link">Privacy Policy</a> |
+      <a href="#" class="footer-link">Terms & Conditions</a> |
+      <a href="#" class="footer-link">Disclaimer</a>
+      &nbsp; | © Sankalp Landmark 2024<br>
+      <span>Design & Developed by <a href="#" class="footer-dev">A2Z IT HUB</a></span>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer to trigger animations when footer is in view
+  document.addEventListener('DOMContentLoaded', function() {
+    const footerColumns = document.querySelectorAll('.footer-col');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = `fadeIn 1s ease-in-out forwards ${entry.target.dataset.delay}`;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    footerColumns.forEach((column, index) => {
+      column.style.opacity = '0';
+      column.style.transform = 'translateY(20px)';
+      column.dataset.delay = `${index * 0.2}s`;
+      observer.observe(column);
+    });
+    
+    // Shimmer effect for social icons
+    const socialIcons = document.querySelectorAll('.social-icons a');
+    
+    setInterval(() => {
+      socialIcons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.classList.add('shimmer');
+          setTimeout(() => {
+            icon.classList.remove('shimmer');
+          }, 1000);
+        }, index * 200);
+      });
+    }, 5000);
+  });
+</script>
+<script>
+  const points = document.querySelectorAll(".point");
+  const textBox = document.getElementById("compass-text");
+
+  points.forEach(point => {
+    point.addEventListener("mouseover", () => {
+      textBox.innerText = point.dataset.text;
+    });
+    point.addEventListener("mouseout", () => {
+      textBox.innerText = "Hover a reason";
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.vertical-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+<script>
+  // Add 'glass' class after delay (e.g., 2 seconds)
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelector('.navbar').classList.add('glass');
+    }, 2000); // Adjust the delay as needed
+  });
+
+  // OR add glass on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('glass');
+    } else {
+      navbar.classList.remove('glass');
+    }
+  });
+</script>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  const revealOnScroll = () => {
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('revealed');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+<script>
+  const icons = document.querySelectorAll('.circle-icon');
+  const infoItems = document.querySelectorAll('.info-item');
+
+  icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      // Remove active class from all
+      icons.forEach(i => i.classList.remove('active'));
+      infoItems.forEach(i => i.classList.remove('active'));
+
+      // Add active to current
+      icon.classList.add('active');
+      const targetId = icon.getAttribute('data-id');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+</script>
+
+
+
+
+<!-- Add before closing body -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+    offset: 100
+  });
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- New Scripts -->
+<!-- Swiper JS (FIRST) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+
+<!-- Bootstrap + jQuery (SECOND) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper Initialization (THIRD) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const testimonialsSwiper = new Swiper('.testimonial-swiper', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

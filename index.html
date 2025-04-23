@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sankalp Navbar with Video</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+   <!-- Existing meta tags and links -->
+   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container px-4">
+      <a class="navbar-brand" href="#">
+        <img src="logo (1).webp" alt="Sankalp Logo">
+      </a>
+  
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars fs-3"></i>
+      </button>
+  
+      <!-- Navbar Menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center text-lg-start">
+          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <div class="video-overlay"></div>
+    <video autoplay muted loop playsinline>
+      <source src="videoplayback.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </section>
+<!-- Spacer (optional) -->
+<div style="height: 20px;"></div>
+
+
+<div style="height: 20px;"></div>
+<h2 class="section-title">Explore Our Signature Developments</h2>
+
+<section class="project-section">
+  <!-- Project 1 -->
+  <div class="project" style="background-image: url('image copy 2.png');">
+    <div class="project-overlay animate__animated animate__fadeInUp" data-aos="fade-up">
+      <h2>MOUNTAIN BLISS</h2>
+      <p class="tagline">Your weekend getaway in the hills</p>
+      <ul class="project-highlights">
+        <li><i class="fas fa-map-marker-alt"></i> Igatpuri, Nashik</li>
+        <li><i class="fas fa-tree"></i> Scenic Mountain Views</li>
+        <li><i class="fas fa-rupee-sign"></i> Starting ₹12 Lakh*</li>
+        <li><i class="fas fa-check-circle"></i> NA Approved Plots</li>
+      </ul>
+      <a href="bliss.html" class="brochure-btn">Explore</a>
+    </div>
+  </div>
+  
+ <!-- Project 2 -->
+<div class="project" style="background-image: url('image copy.png');">
+  <div class="project-overlay animate__animated animate__fadeInUp" data-aos="fade-up">
+    <h2>SUNSCAPE</h2>
+    <p class="tagline">A golden escape to nature’s lap</p>
+    <ul class="project-highlights">
+      <li><i class="fas fa-map-marker-alt"></i> Trimbakeshwar, Nashik</li>
+      <li><i class="fas fa-sun"></i> Full-Day Sunlight Exposure</li>
+      <li><i class="fas fa-rupee-sign"></i> Starting ₹9.5 Lakh*</li>
+      <li><i class="fas fa-check-circle"></i> Ready Possession Plots</li>
+    </ul>
+    <a href="sunscape.html" class="brochure-btn">Explore</a>
+  </div>
+</div>
+
+
+ <!-- Project 3 -->
+<div class="project" style="background-image: url('image.png');">
+  <div class="project-overlay animate__animated animate__fadeInUp" data-aos="fade-up">
+    <h2> BEAUTIFUL BHAVALI</h2>
+    <p class="tagline">Where serenity meets smart investment</p>
+    <ul class="project-highlights">
+      <li><i class="fas fa-map-marker-alt"></i> Bhavali Dam Road, Igatpuri</li>
+      <li><i class="fas fa-water"></i> Close to Waterfalls & Lakes</li>
+      <li><i class="fas fa-rupee-sign"></i> Starting ₹10.8 Lakh*</li>
+      <li><i class="fas fa-check-circle"></i> High Appreciation Zone</li>
+    </ul>
+    <a href="bhavali.html" class="brochure-btn">Explore</a>
+  </div>
+</div>
+
+</section>
+
+<section class="story-section">
+  <div class="container d-flex align-items-center flex-wrap">
+    <!-- Image Column -->
+    <div class="story-image reveal-on-scroll">
+      <img src="https://sankalplandmark.com/assets/img/home/02.jpg" alt="Our Journey" loading="lazy" data-aos="fade"/>
+    </div>
+    
+
+    <!-- Content Column -->
+    <div class="story-content" data-aos="fade-left">
+      <p class="highlight">OUR LEGACY</p>
+      <h2>A Journey Of Two Decades</h2>
+      <p>
+        Our company was started 20 years back by our founder – Mr. Uttam Appa Shinde in Nashik, Igatpuri.
+        Under his purview, the company sold over 200 acres of land in Nashik which is a milestone in itself.
+      </p>
+      <p>
+        As an organization, Sankalp believes not just in selling our lands and villas, but we also endeavor to
+        welcome new members to our family and give them healthy returns.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="verticals-grid-section" id="vert">
+  <h2 class="section-title">Our Verticals</h2>
+  <div class="verticals-grid">
+    <!-- Card 1 -->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/agriculture-lands/03.jpg" alt="Agriculture" />
+          <h3>Agriculture Land</h3>
+        </div>
+        <div class="flip-back">
+          <p>Premium farmland investment for green returns.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat this flip-card for all verticals below -->
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/plots/02.jpg" alt="NA Plots" />
+          <h3>NA Plots</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/investment-plots/03.jpg" alt="NA Plots" />
+          <h3>Investment Plots</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/resort-plot/03.jpg" alt="NA Plots" />
+          <h3>Resort Plots</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="verticals-grid center-three">
+
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/passive-income-homes/03.jpg" alt="NA Plots" />
+          <h3>Passive Income Homes</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/Villas-and-studio-apartments/03.jpg" alt="NA Plots" />
+          <h3>Villas & Studio Apartments</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" data-aos="fade-up" data-aos-delay="300">
+
+      <div class="flip-inner">
+        <div class="flip-front">
+          <img src="https://sankalplandmark.com/assets/img/second-homes/03.jpg" alt="NA Plots" />
+          <h3>Second Homes</h3>
+        </div>
+        <div class="flip-back">
+          <p>Approved plots perfect for development.</p>
+          <a href="#" class="card-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Continue for Investment Plots, Resort Plots, etc. -->
+    <!-- Total 7 cards now. 8th can be a placeholder or future vertical -->
+
+</section>
+<section class="compass-section">
+  <div class="compass-wrapper ">
+    <div class="center-circle">
+      <h3>Why Invest<br>in Sankalp?</h3>
+      <p id="compass-text"></p>
+    </div>
+    <div class="rotating-ring">
+    <div class="point p1" data-text="Expert Real Estate Team">
+      <img src="https://sankalplandmark.com/assets/img/home/icon01.jpg" alt="1">
+    </div>
+    <div class="point p2" data-text="Premium Land Bank">
+      <img src="https://sankalplandmark.com/assets/img/home/icon02.jpg" alt="2">
+    </div>
+    <div class="point p3" data-text="Vastu Compliant Layouts">
+      <img src="https://sankalplandmark.com/assets/img/home/icon03.jpg" alt="3">
+    </div>
+    <div class="point p4" data-text="High Return Guarantee">
+      <img src="https://sankalplandmark.com/assets/img/home/icon04.jpg" alt="4">
+    </div>
+    <div class="point p5" data-text="Post & Pre-Sales Support">
+      <img src="https://sankalplandmark.com/assets/img/home/icon05.jpg" alt="5">
+    </div>
+    <div class="point p6" data-text="Multiple Project Options">
+      <img src="https://sankalplandmark.com/assets/img/home/icon06.jpg" alt="6">
+    </div>
+  </div>
+  </div>
+</section>
+<section class="testimonial-section">
+  <div class="container">
+    <h2 class="section-title">What Do People Think About Us</h2>
+    
+    <!-- Swiper container -->
+    <div class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        
+       <!-- Testimonial 1 -->
+<div class="swiper-slide testimonial-card">
+  <img src="thumb.webp" alt="Priya S." class="testimonial-img" />
+  <p>"Investing with Sankalp was the best decision! I got great returns and amazing service."</p>
+  <h4>- Priya S., Mumbai</h4>
+</div>
+
+<!-- Testimonial 2 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://img.freepik.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" alt="Rajesh T." class="testimonial-img" />
+  <p>"The location and layout of the project are just perfect. Beautifully managed."</p>
+  <h4>- Rajesh T., Pune</h4>
+</div>
+
+<!-- Testimonial 3 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://media.istockphoto.com/id/1389348844/photo/studio-shot-of-a-beautiful-young-woman-smiling-while-standing-against-a-grey-background.jpg?s=612x612&w=0&k=20&c=anRTfD_CkOxRdyFtvsiPopOluzKbhBNEQdh4okZImQc=" alt="Sneha K." class="testimonial-img" />
+  <p>"From site visit to registration, Sankalp made the entire process smooth and trustworthy."</p>
+  <h4>- Sneha K., Nashik</h4>
+</div>
+<!-- Testimonial 2 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg" alt="Rajesh T." class="testimonial-img" />
+  <p>"The location and layout of the project are just perfect. Beautifully managed."</p>
+  <h4>- Rajesh T., Pune</h4>
+</div>
+
+<!-- Testimonial 3 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvi7HpQ-_PMSMOFrj1hwjp6LDcI-jm3Ro0Xw&s" alt="Sneha K." class="testimonial-img" />
+  <p>"From site visit to registration, Sankalp made the entire process smooth and trustworthy."</p>
+  <h4>- Sneha K., Nashik</h4>
+</div>
+<!-- Testimonial 2 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg" alt="Rajesh T." class="testimonial-img" />
+  <p>"The location and layout of the project are just perfect. Beautifully managed."</p>
+  <h4>- Rajesh T., Pune</h4>
+</div>
+
+<!-- Testimonial 3 -->
+<div class="swiper-slide testimonial-card">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvi7HpQ-_PMSMOFrj1hwjp6LDcI-jm3Ro0Xw&s" alt="Sneha K." class="testimonial-img" />
+  <p>"From site visit to registration, Sankalp made the entire process smooth and trustworthy."</p>
+  <h4>- Sneha K., Nashik</h4>
+</div>
+
+
+        <!-- Add more testimonials as needed -->
+      </div>
+
+     
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-logo">
+          
+          <span>Sankalp Landmark</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt contact-icon"></i>
+          <p>Office No 7–8, 1st Floor,<br>
+          Shreeji The Status, Opposite City Center Mall,<br>
+          Forest Colony, Parijat Nagar,<br>
+          Nasik, Maharashtra 422007</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone-alt contact-icon"></i>
+          <p><strong>Call:</strong> +91 8007 751 751</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope contact-icon"></i>
+          <p><strong>Email:</strong> enquiry@sankalplandmark@gmail.com</p>
+        </div>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Properties</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Our Verticals</h4>
+        <ul>
+          <li><a href="#">Agriculture Land</a></li>
+          <li><a href="#">NA Plots</a></li>
+          <li><a href="#">Investment Plots</a></li>
+          <li><a href="#">Resort Plots</a></li>
+          <li><a href="#">Passive Income Homes</a></li>
+          <li><a href="#">Villas & Studio Apartments</a></li>
+          <li><a href="#">Second Homes</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Stay Connected</h4>
+        <p>Subscribe to our newsletter for exclusive property updates and investment opportunities.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder=" Email ">
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="awards-section">
+      <div class="awards-title"><i class="fas fa-award"></i> Our Recognitions</div>
+      <div class="awards-icons">
+        <div class="award-icon"><i class="fas fa-medal"></i></div>
+        <div class="award-icon"><i class="fas fa-trophy"></i></div>
+        <div class="award-icon"><i class="fas fa-certificate"></i></div>
+        <div class="award-icon"><i class="fas fa-star"></i></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>
+      <a href="#" class="footer-link">Privacy Policy</a> |
+      <a href="#" class="footer-link">Terms & Conditions</a> |
+      <a href="#" class="footer-link">Disclaimer</a>
+      &nbsp; | © Sankalp Landmark 2024<br>
+      <span>Design & Developed by <a href="#" class="footer-dev">A2Z IT HUB</a></span>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer to trigger animations when footer is in view
+  document.addEventListener('DOMContentLoaded', function() {
+    const footerColumns = document.querySelectorAll('.footer-col');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = `fadeIn 1s ease-in-out forwards ${entry.target.dataset.delay}`;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    footerColumns.forEach((column, index) => {
+      column.style.opacity = '0';
+      column.style.transform = 'translateY(20px)';
+      column.dataset.delay = `${index * 0.2}s`;
+      observer.observe(column);
+    });
+    
+    // Shimmer effect for social icons
+    const socialIcons = document.querySelectorAll('.social-icons a');
+    
+    setInterval(() => {
+      socialIcons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.classList.add('shimmer');
+          setTimeout(() => {
+            icon.classList.remove('shimmer');
+          }, 1000);
+        }, index * 200);
+      });
+    }, 5000);
+  });
+</script>
+<script>
+  const points = document.querySelectorAll(".point");
+  const textBox = document.getElementById("compass-text");
+
+  points.forEach(point => {
+    point.addEventListener("mouseover", () => {
+      textBox.innerText = point.dataset.text;
+    });
+    point.addEventListener("mouseout", () => {
+      textBox.innerText = "Hover a reason";
+    });
+  });
+</script>
+
+<script>
+  // Add 'glass' class after delay (e.g., 2 seconds)
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelector('.navbar').classList.add('glass');
+    }, 2000); // Adjust the delay as needed
+  });
+
+  // OR add glass on scroll
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('glass');
+    } else {
+      navbar.classList.remove('glass');
+    }
+  });
+</script>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  const revealOnScroll = () => {
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('revealed');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+<script>
+  const icons = document.querySelectorAll('.circle-icon');
+  const infoItems = document.querySelectorAll('.info-item');
+
+  icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      // Remove active class from all
+      icons.forEach(i => i.classList.remove('active'));
+      infoItems.forEach(i => i.classList.remove('active'));
+
+      // Add active to current
+      icon.classList.add('active');
+      const targetId = icon.getAttribute('data-id');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+</script>
+
+
+
+
+<!-- Add before closing body -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+    offset: 100
+  });
+</script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- New Scripts -->
+<!-- Swiper JS (FIRST) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+
+<!-- Bootstrap + jQuery (SECOND) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<!-- Swiper Initialization (THIRD) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const testimonialsSwiper = new Swiper('.testimonial-swiper', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
