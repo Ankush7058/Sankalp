@@ -1,0 +1,342 @@
+/* 
+=========================
+Mountain Bliss - Enhanced Animations
+=========================
+*/
+
+/* Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 100% 0; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes rotateIn {
+    from { transform: rotate(-10deg) scale(0.8); opacity: 0; }
+    to { transform: rotate(0) scale(1); opacity: 1; }
+  }
+  
+  @keyframes slideUpFade {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes expandWidth {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes snowfall {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(25px) translateX(15px); opacity: 0; }
+  }
+  
+  @keyframes mountainRise {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes ripple {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+  
+  @keyframes rotate3D {
+    0% { transform: perspective(1000px) rotateY(0deg); }
+    100% { transform: perspective(1000px) rotateY(360deg); }
+  }
+  
+  @keyframes shine {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  
+  /* Enhanced Elements */
+  .hero-title .highlight {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    bottom: 5px;
+    left: 0;
+    background: linear-gradient(90deg, rgba(212,175,55,0.1), rgba(212,175,55,0.5), rgba(212,175,55,0.1));
+    background-size: 200% 100%;
+    z-index: -1;
+    animation: shimmer 3s infinite, pulse 2s infinite;
+  }
+  
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    margin: 10px auto 0;
+    animation: expandWidth 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .amenity-icon {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .property-card-front:hover .property-image img {
+    transform: scale(1.1);
+  }
+  
+  .gallery-item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(212,175,55,0.3) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.5s;
+  }
+  
+  .gallery-item:hover::before {
+    opacity: 1;
+    animation: ripple 1.5s infinite;
+  }
+  
+  /* Snow effect for mountain sections */
+  .mountain-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite;
+  }
+  
+  .about-img-wrapper {
+    position: relative;
+  }
+  
+  .about-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 60%;
+    height: 60%;
+    border: 2px solid var(--gold);
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .parallax-mountain {
+    animation: mountainRise 2s ease-out forwards;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #1a365d 0%, #2a4365 50%, #1a365d 100%);
+    background-size: 200% 200%;
+    animation: gradientFlow 15s ease infinite;
+  }
+  
+  /* 3D Hover Effect for Buttons */
+  .btn-gold {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+  }
+  
+  .btn-gold:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 5px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Animated Logo */
+  .navbar-brand svg {
+    height: 40px;
+    width: auto;
+  }
+  
+  .navbar-brand svg #mountains path {
+    transition: transform 0.5s;
+    transform-origin: bottom center;
+  }
+  
+  .navbar-brand:hover svg #mountains path:nth-child(1) {
+    transform: translateY(-5px);
+  }
+  
+  .navbar-brand:hover svg #mountains path:nth-child(2) {
+    transform: translateY(-8px);
+    transition-delay: 0.1s;
+  }
+  
+  .navbar-brand:hover svg #mountains path:nth-child(3) {
+    transform: translateY(-3px);
+    transition-delay: 0.2s;
+  }
+  
+  /* Animated Background for Footer */
+  .footer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--navy-dark) 25%, transparent 25%, transparent 50%, var(--navy-dark) 50%, var(--navy-dark) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    opacity: 0.03;
+    z-index: 0;
+    animation: gradientFlow 60s linear infinite;
+  }
+  
+  /* Luxury shine effect for headings */
+  .luxury-text {
+    position: relative;
+    color: var(--gold);
+    overflow: hidden;
+  }
+  
+  .luxury-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 3s infinite;
+  }
+  
+  /* 3D Flip card with shadow */
+  .card-wrapper {
+    perspective: 1000px;
+    height: 100%;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s, box-shadow 0.3s;
+  }
+  
+  .card-wrapper:hover .card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+  
+  /* Hover effect for gallery items */
+  .gallery-item {
+    overflow: hidden;
+    transition: transform 0.5s;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+  
+  .gallery-item img {
+    transition: transform 0.7s;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Scroll indicator pulse */
+  .scroll-down i {
+    animation: pulse 2s infinite !important;
+  }
+  
+  /* Enhanced Form Elements */
+  .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .btn-inquire {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .btn-inquire::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shine 3s infinite;
+  }
+  
+  /* Responsive animations */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .about-img-wrapper::after {
+      width: 40%;
+      height: 40%;
+    }
+    
+    .card-wrapper:hover .card-inner {
+      transform: none;
+    }
+    
+    .card-inner {
+      transform-style: flat;
+    }
+    
+    .property-card-back {
+      position: relative;
+      transform: none;
+      opacity: 1;
+      background-color: var(--navy-light);
+      backface-visibility: visible;
+      margin-top: 15px;
+      border-radius: 12px;
+    }
+  }

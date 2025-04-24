@@ -22,34 +22,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    @media screen and (max-width: 468px) {
+      .navbar-brand img {
+        width: 100px; /* Adjust the size for mobile */
+      }
+      .navbar{
+        width: 458px;
+      }
+      
+    }
+  </style>
 </head>
 
 <body>
+<!-- Fixed Navbar with working toggle -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
+  <div class="container px-4">
+    <a class="navbar-brand" href="#">
+      <img src="logo (1).webp" alt="Sankalp Logo">
+    </a>
 
-<!-- Updated Navbar with Toggler -->
-<nav class="navbar navbar-expand-lg ">
-    <div class="container px-4">
-      <a class="navbar-brand" href="#">
-        <img src="logo (1).webp" alt="Sankalp Logo">
-      </a>
-  
-      <!-- Mobile Toggler -->
-      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="fas fa-bars fs-3"></i>
-      </button>
-  
-      <!-- Navbar Menu -->
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav text-center text-lg-start">
-          <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
-          <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
-          <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
-        </ul>
-      </div>
+    <!-- Corrected Toggler Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Nav Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav text-center text-lg-start">
+        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+        <li class="nav-item"><a class="nav-link" href="verticals.html">OUR VERTICALS</a></li>
+        <li class="nav-item"><a class="nav-link" href="team.html">OUR TEAM</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
   
 
   <!-- Video Section -->
@@ -79,7 +91,7 @@
         <li><i class="fas fa-rupee-sign"></i> Starting ₹12 Lakh*</li>
         <li><i class="fas fa-check-circle"></i> NA Approved Plots</li>
       </ul>
-      <a href="bliss.html" class="brochure-btn">Explore</a>
+      <a href="demo.html" class="brochure-btn">Explore</a>
     </div>
   </div>
   
@@ -429,6 +441,30 @@
   </div>
 </footer>
 
+
+
+
+
+
+  <!-- Bootstrap JS -->
+
+    <!-- New Scripts -->
+<!-- Swiper JS (FIRST) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+
+<!-- Bootstrap + jQuery (SECOND) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Add before closing body -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+    offset: 100
+  });
+</script>
 <script>
   // Intersection Observer to trigger animations when footer is in view
   document.addEventListener('DOMContentLoaded', function() {
@@ -478,6 +514,38 @@
     });
   });
 </script>
+<script>
+  // Auto-close mobile navbar after link click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navCollapse = document.getElementById('navbarNav');
+      if (navCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navCollapse, {
+          toggle: false
+        });
+        bsCollapse.hide();
+      }
+    });
+  });
+</script>
+
+<script>
+  const icons = document.querySelectorAll('.circle-icon');
+  const infoItems = document.querySelectorAll('.info-item');
+
+  icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      // Remove active class from all
+      icons.forEach(i => i.classList.remove('active'));
+      infoItems.forEach(i => i.classList.remove('active'));
+
+      // Add active to current
+      icon.classList.add('active');
+      const targetId = icon.getAttribute('data-id');
+      document.getElementById(targetId).classList.add('active');
+    });
+  });
+</script>
 
 <script>
   // Add 'glass' class after delay (e.g., 2 seconds)
@@ -513,48 +581,6 @@
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
 </script>
-<script>
-  const icons = document.querySelectorAll('.circle-icon');
-  const infoItems = document.querySelectorAll('.info-item');
-
-  icons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      // Remove active class from all
-      icons.forEach(i => i.classList.remove('active'));
-      infoItems.forEach(i => i.classList.remove('active'));
-
-      // Add active to current
-      icon.classList.add('active');
-      const targetId = icon.getAttribute('data-id');
-      document.getElementById(targetId).classList.add('active');
-    });
-  });
-</script>
-
-
-
-
-<!-- Add before closing body -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 800,
-    once: true,
-    easing: 'ease-in-out',
-    offset: 100
-  });
-</script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- New Scripts -->
-<!-- Swiper JS (FIRST) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
-
-<!-- Bootstrap + jQuery (SECOND) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
 <!-- Swiper Initialization (THIRD) -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
