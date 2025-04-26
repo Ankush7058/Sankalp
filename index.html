@@ -22,34 +22,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <style>
-    @media screen and (max-width: 468px) {
-      .navbar-brand img {
-        width: 100px; /* Adjust the size for mobile */
-      }
-      .navbar{
-        width: 458px;
-      }
-      
-    }
-  </style>
+
 </head>
 
 <body>
-<!-- Fixed Navbar with working toggle -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
+<!-- Updated Navbar with Toggler -->
+<nav class="navbar navbar-expand-lg ">
   <div class="container px-4">
     <a class="navbar-brand" href="#">
       <img src="logo (1).webp" alt="Sankalp Logo">
     </a>
 
-    <!-- Corrected Toggler Button -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <!-- Mobile Toggler -->
+    <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <i class="fas fa-bars fs-3"></i>
     </button>
 
-    <!-- Collapsible Nav Links -->
+    <!-- Navbar Menu -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav text-center text-lg-start">
         <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
@@ -128,6 +117,7 @@
 
 </section>
 
+
 <section class="story-section">
   <div class="container d-flex align-items-center flex-wrap">
     <!-- Image Column -->
@@ -152,140 +142,137 @@
   </div>
 </section>
 
-<section class="verticals-grid-section" id="vert">
-  <h2 class="section-title">Our Verticals</h2>
-  <div class="verticals-grid">
-    <!-- Card 1 -->
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/agriculture-lands/03.jpg" alt="Agriculture" />
-          <h3>Agriculture Land</h3>
+<!-- Our Verticals Section -->
+<section class="verticals-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <h2 class="section-title">Our Verticals</h2>
+      <p class="section-subtitle">Explore our diverse range of premium offerings</p>
+    </div>
+    
+    <div class="verticals-container">
+      <!-- Vertical 1 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/plots/02.jpg" alt="Agriculture Land">
+            <div class="vertical-title">
+              <h3>Agriculture Land</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Agriculture Land</h3>
+            <p>Premium agricultural plots with fertile soil and excellent irrigation facilities for farming enthusiasts.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
         </div>
-        <div class="flip-back">
-          <p>Premium farmland investment for green returns.</p>
-          <a href="#" class="card-btn">Know More</a>
+      </div>
+      
+      <!-- Vertical 2 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/investment-plots/03.jpg" alt="NA Plots">
+            <div class="vertical-title">
+              <h3>NA Plots</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>NA Plots</h3>
+            <p>Non-agricultural plots with all necessary approvals, perfect for building your dream home.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vertical 3 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/investment-plots/03.jpg" alt="Investment Plots">
+            <div class="vertical-title">
+              <h3>Investment Plots</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Investment Plots</h3>
+            <p>Strategic land investments with high appreciation potential in rapidly developing areas.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vertical 4 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/resort-plot/03.jpg" alt="Resort Plots">
+            <div class="vertical-title">
+              <h3>Resort Plots</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Resort Plots</h3>
+            <p>Scenic plots in vacation destinations, ideal for building your personal retreat or commercial resort.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vertical 5 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/passive-income-homes/03.jpg" alt="Passive Income Homes">
+            <div class="vertical-title">
+              <h3>Passive Income Homes</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Passive Income Homes</h3>
+            <p>Investment properties designed to generate consistent rental income with minimal management.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vertical 6 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/Villas-and-studio-apartments/03.jpg" alt="Villas & Studio Apartments">
+            <div class="vertical-title">
+              <h3>Villas & Studios</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Villas & Studios</h3>
+            <p>Luxurious villas and compact studio apartments with modern amenities and elegant designs.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vertical 7 -->
+      <div class="vertical-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="vertical-card-inner">
+          <div class="vertical-card-front">
+            <img src="https://sankalplandmark.com/assets/img/second-homes/03.jpg" alt="Second Homes">
+            <div class="vertical-title">
+              <h3>Second Homes</h3>
+            </div>
+          </div>
+          <div class="vertical-card-back">
+            <h3>Second Homes</h3>
+            <p>Vacation homes in serene locations, offering a perfect escape from the hustle and bustle of city life.</p>
+            <a href="#" class="vertical-btn">Learn More</a>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Repeat this flip-card for all verticals below -->
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/plots/02.jpg" alt="NA Plots" />
-          <h3>NA Plots</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/investment-plots/03.jpg" alt="NA Plots" />
-          <h3>Investment Plots</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/resort-plot/03.jpg" alt="NA Plots" />
-          <h3>Resort Plots</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div class="verticals-grid center-three">
-
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/passive-income-homes/03.jpg" alt="NA Plots" />
-          <h3>Passive Income Homes</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/Villas-and-studio-apartments/03.jpg" alt="NA Plots" />
-          <h3>Villas & Studio Apartments</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-    <div class="flip-card" data-aos="fade-up" data-aos-delay="300">
-
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="https://sankalplandmark.com/assets/img/second-homes/03.jpg" alt="NA Plots" />
-          <h3>Second Homes</h3>
-        </div>
-        <div class="flip-back">
-          <p>Approved plots perfect for development.</p>
-          <a href="#" class="card-btn">Know More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <!-- Continue for Investment Plots, Resort Plots, etc. -->
-    <!-- Total 7 cards now. 8th can be a placeholder or future vertical -->
-
-</section>
-<section class="compass-section">
-  <div class="compass-wrapper ">
-    <div class="center-circle">
-      <h3>Why Invest<br>in Sankalp?</h3>
-      <p id="compass-text"></p>
-    </div>
-    <div class="rotating-ring">
-    <div class="point p1" data-text="Expert Real Estate Team">
-      <img src="https://sankalplandmark.com/assets/img/home/icon01.jpg" alt="1">
-    </div>
-    <div class="point p2" data-text="Premium Land Bank">
-      <img src="https://sankalplandmark.com/assets/img/home/icon02.jpg" alt="2">
-    </div>
-    <div class="point p3" data-text="Vastu Compliant Layouts">
-      <img src="https://sankalplandmark.com/assets/img/home/icon03.jpg" alt="3">
-    </div>
-    <div class="point p4" data-text="High Return Guarantee">
-      <img src="https://sankalplandmark.com/assets/img/home/icon04.jpg" alt="4">
-    </div>
-    <div class="point p5" data-text="Post & Pre-Sales Support">
-      <img src="https://sankalplandmark.com/assets/img/home/icon05.jpg" alt="5">
-    </div>
-    <div class="point p6" data-text="Multiple Project Options">
-      <img src="https://sankalplandmark.com/assets/img/home/icon06.jpg" alt="6">
-    </div>
-  </div>
   </div>
 </section>
+
 <section class="testimonial-section">
   <div class="container">
     <h2 class="section-title">What Do People Think About Us</h2>
